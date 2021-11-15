@@ -1,0 +1,30 @@
+.header {}
+
+
+// .header__logo
+&__logo {
+
+  img {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    object-fit: cover;
+  }
+}
+
+// .header__menu
+&__menu {
+  position: relative;
+
+
+  @media (min-width:$md3+px) {
+    &._fixed {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0;
+      opacity: .8;
+    }
+  }
+}
