@@ -85,7 +85,7 @@ if (location.hash) {
 let burger= document.querySelector(".burger");
 if (burger != null) {
 	let delay = 500;
-	let menu = document.querySelector(".menu__list");
+	let menu = document.querySelector(".menu");
 	burger.addEventListener("click", function (e) {
 		if (unlock) {
 			body_lock(delay);

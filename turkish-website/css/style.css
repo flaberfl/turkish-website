@@ -143,6 +143,13 @@ body._lock {
   font-size: 18px;
 }
 
+button {
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -649,40 +656,26 @@ body.ie ._ibg img {
   padding: 16px 0px;
 }
 
-.header__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header__menu._active {
-  display: block;
-}
-
 .header__logo {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
 
+.menu._active {
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
 .menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   margin-right: 64px;
   margin-left: 32px;
+  text-align: center;
 }
 
 .menu__item {
-  padding: 5px 0px;
+  padding: 0px 0px 32px 0px;
 }
 
 .menu__item:not(:last-child) {
@@ -706,10 +699,6 @@ body.ie ._ibg img {
 
 .burger {
   display: none;
-  background: none;
-  margin: 0;
-  padding: 0;
-  z-index: 999;
 }
 
 .page {
@@ -766,6 +755,35 @@ _active - открытый аккордеон
 
 */
 
+@media (min-width: 767.98px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .menu__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .menu__item {
+    padding: 5px 0px;
+  }
+}
+
 @media (min-width: 992px) {
   .checkbox a:hover {
     text-decoration: none;
@@ -791,18 +809,34 @@ _active - открытый аккордеон
     display: none;
   }
 
-  .header__menu {
-    display: none;
+  .header__content {
+    padding: 26px 0px;
+  }
+
+  .menu {
+    position: fixed;
+    -webkit-transform: translate(0px, -130px);
+        -ms-transform: translate(0px, -130px);
+            transform: translate(0px, -130px);
+    margin: 0 auto;
+  }
+
+  .menu__item:last-child {
+    padding: 0px 0px 36px 0px;
+  }
+
+  .menu__link {
+    font-size: 18px;
+    line-height: 120%;
   }
 
   .burger {
     display: block;
-    position: fixed;
     position: absolute;
-    top: 30px;
-    right: 26px;
-    width: 19px;
-    height: 19px;
+    top: 36px;
+    right: 27px;
+    width: 18px;
+    height: 16px;
     cursor: pointer;
     z-index: 999;
   }
