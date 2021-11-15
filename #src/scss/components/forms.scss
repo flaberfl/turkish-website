@@ -27,160 +27,65 @@
 
 //<BUTTONS (a.btn+tab)>====================================================================================================
 .btn {
-	display: inline-flex;
-	padding: 15px 26px;
-	border-radius: 25px;
-
-	background-color: $c_2;
-
-	font-weight: 600;
-	color: #6e551b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 52px;
+	padding: 16px 60px;
+	border-radius: 30px;
+	
+	background-color: $red;
+	
+	font-size: 16px;
+	font-weight: 700;
+	color: $white;
+	text-align: center;
+	line-height: 19.2 / 16 * 100%;
 
 	transition: 0.3s;
 
-	@media (min-width: 992px) {
-		&:hover {
-			background: #edaf21;
-			color: #000;
-		}
+	&:hover {
+		background-color: $red-hover;
 	}
 
-	&._fw {
-		width: 100%;
+	&__callback {
+		min-height: 48px;
+		min-width: 226px;
+		padding: 14px 28px 14px 58px;
+
+		background: $red url('../../img/svg/btn-phone.svg') 13% center no-repeat;
+		border-radius: 40px;
+
+		letter-spacing: -.2px;
 	}
+
+
+
 }
 
-#upbutton {
-	position: fixed;
-	padding: 10px 30px;
-	right: 27px;
-	bottom: 20px;
+// #upbutton {
+// 	position: fixed;
+// 	padding: 10px 30px;
+// 	right: 27px;
+// 	bottom: 20px;
 
-	background: #f5bc30;
-	border-radius: 10px;
-	box-shadow: 0 2px 5px rgba(#000, .2);
-	opacity: 0;
+// 	background: #f5bc30;
+// 	border-radius: 10px;
+// 	box-shadow: 0 2px 5px rgba(#000, .2);
+// 	opacity: 0;
 
-	color: #fff;
-	text-align: center;
+// 	color: #fff;
+// 	text-align: center;
 
-	transition: opacity .6s;
+// 	transition: opacity .6s;
 
-	&._fixed {
-		opacity: .8;
-	}
-}
+// 	&._fixed {
+// 		opacity: .8;
+// 	}
+// }
 
 //</BUTTONS>====================================================================================================
 
-
-
-//<SELECT (sel+tab)>====================================================================================================
-.select {
-	position: relative;
-
-	// .select__item
-	&__item {
-		position: relative;
-	}
-
-	// .select__title
-	&__title {
-		color: #000;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
-		cursor: pointer;
-		border-radius: 4px;
-
-		@media (max-width: $md2+px) {
-			font-size: 18px;
-		}
-	}
-
-	// .select__value
-	&__value {
-		display: flex;
-		font-size: 14px;
-		height: 30px;
-		padding: 0px 15px;
-		align-items: center;
-		justify-content: space-between;
-		flex-direction: row-reverse;
-
-		span {
-			height: 1em;
-			overflow: hidden;
-			display: -webkit-box;
-			-webkit-line-clamp: 1;
-			-webkit-box-orient: vertical;
-		}
-
-		&:before {
-			content: "";
-			display: inline-block;
-			transition: all 0.3s ease 0s;
-			width: 11px;
-			height: 7px;
-			background: url("../img/icons/select.svg") center / 100% no-repeat;
-		}
-	}
-
-	&__input {
-		width: 100%;
-		background-color: transparent;
-		height: 100%;
-	}
-
-	// .select__options
-	&__options {
-		color: #000;
-		display: none;
-		position: absolute;
-		top: 29px;
-		border-radius: 0 0 4px 4px;
-		min-width: 100%;
-		left: 0;
-		background-color: #fff;
-		border-top: 0;
-		border: 1px solid #d9d9d9;
-		border-top: 0;
-		font-size: 14px;
-		padding: 10px 0px 5px 0px;
-
-		@media (max-width: $md2+px) {
-			font-size: 18px;
-		}
-	}
-
-	// .select__option
-	&__option {
-		cursor: pointer;
-		padding: 5px 15px;
-		margin: 0px 0px 0px 0px;
-
-		@media (min-width: 992px) {
-			&:hover {
-				background: #d9d9d9;
-			}
-		}
-	}
-
-	&._active {
-		z-index: 5;
-
-		.select__value {
-			&:before {
-				transform: rotate(-180deg);
-			}
-		}
-
-		.select__options {
-			display: block;
-		}
-	}
-}
-
-//</SELECT>====================================================================================================
 
 //<INPUT (inp+tab)>====================================================================================================
 input[type="text"],
@@ -415,72 +320,3 @@ textarea {
 	line-height: 13px;
 	vertical-align: middle;
 }
-
-//</RATING>====================================================================================================
-
-//<QUANTITY>====================================================================================================
-.quantity {
-	width: 88px;
-	height: 40px;
-	display: flex;
-	border: 1px solid rgba(166, 166, 166, 0.45);
-
-	// .quantity__button
-	&__button {
-		flex: 0 0 30px;
-		position: relative;
-		cursor: pointer;
-
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transition: all 0.3s ease 0s;
-			margin: 0px 0px 0px -4.5px;
-			background-color: #a6a6a6;
-			width: 9px;
-			height: 1px;
-		}
-
-		@media (min-width: $md2+px) {
-			&:hover {
-
-				&::before,
-				&::after {
-					background-color: rgba(0, 0, 0, 0.5);
-				}
-			}
-		}
-
-		// .quantity__button_plus
-		&_plus {
-			&::before {
-				transform: rotate(-90deg);
-			}
-		}
-
-		// .quantity__button_minus
-		&_minus {}
-	}
-
-	// .quantity__input
-	&__input {
-		flex: 1 1 auto;
-
-		input {
-			height: 100%;
-			color: #a6a6a6;
-			font-size: 12px;
-			width: 100%;
-			text-align: center;
-		}
-	}
-}
-
-//</QUANTITY>====================================================================================================
-
-//<RANGE>====================================================================================================
-
-//</RANGE>====================================================================================================

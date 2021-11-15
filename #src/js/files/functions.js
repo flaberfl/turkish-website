@@ -82,22 +82,22 @@ if (location.hash) {
 }
 //=================
 //Menu
-let iconMenu = document.querySelector(".icon-menu");
-if (iconMenu != null) {
+let burger= document.querySelector(".burger");
+if (burger != null) {
 	let delay = 500;
-	let menuBody = document.querySelector(".menu__body");
-	iconMenu.addEventListener("click", function (e) {
+	let menu = document.querySelector(".menu__list");
+	burger.addEventListener("click", function (e) {
 		if (unlock) {
 			body_lock(delay);
-			iconMenu.classList.toggle("_active");
-			menuBody.classList.toggle("_active");
+			burger.classList.toggle("_active");
+			menu.classList.toggle("_active");
 		}
 	});
 
 	window.addEventListener("click", function (e) {
 		if (unlock) {
-			iconMenu.classList.remove("_active");
-			menuBody.classList.remove("_active");
+			burger.classList.remove("_active");
+			menu.classList.remove("_active");
 			body_lock_remove(delay);
 		}
 	});

@@ -6,7 +6,7 @@
 
 //<Подключаем шрифты>=======================================================================================
 //&display=swap&subset=cyrillic-ext
-@import "fonts";
+// @import "fonts";
 @import url('https://fonts.googleapis.com/css?family=Lato:regular,700,800&display=swap&subset=cyrillic-ext');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:regular,700,800,900&display=swap&subset=cyrillic-ext');
 @import url('https://fonts.googleapis.com/css?family=Roboto:900&display=swap&subset=cyrillic-ext');
@@ -38,19 +38,15 @@ $blue: #3035C3;
 $light: #DEDEFF;
 $white: #fff;
 
-
-
-
-// $c_1: #1895e3;
-
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 @import "base/null";
 
 body {
-  // background: #E5E5E5;
-  background-color: #000;
+  // background-color: #E5E5E5;
+  font-size: 14px;
+  color: $dark;
 
   &._lock {
     overflow: hidden;
@@ -82,8 +78,8 @@ body {
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
-// @import "components/forms";
-// @import "components/ui";
+@import "components/forms";
+@import "components/ui";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
@@ -94,6 +90,9 @@ body {
 // @import "components/spollers";
 // @import "components/popup";
 // @import "components/forms";
+
+@import "layout/header";
+@import "components/menu";
 
 // @import "layout/footer";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
