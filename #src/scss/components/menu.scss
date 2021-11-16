@@ -1,14 +1,10 @@
-.burger{
+.burger {
   display: none;
-  // background: none;
-  // margin: 0;
-  // padding: 0;
-  // z-index: 999;
+  z-index: 999;
 
   @media (max-width: $md3+px) {
     display: block;
-    // position: fixed;
-    // position: relative;
+
     position: absolute;
     top: 36px;
     right: 27px;
