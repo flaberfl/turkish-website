@@ -1,10 +1,18 @@
 .header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
   background-color: $white;
   box-shadow: 0px 5px 20px rgba(28, 28, 28, 0.1);
 
   // .header__container
   &__container {
-
+    max-height: 300px;
+    overflow-y: auto;
+    // height: 100%;
   }
 
   // .header__top
@@ -17,7 +25,19 @@
     border-bottom: 1px solid rgba(222, 222, 255, .5);
 
     @media (max-width: $md3+px) {
-      // display: none;
+      flex-direction: column-reverse;
+      padding: 36px 110px 32px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+
+      transform: translate(100%, 467px);
+      transition: transform 0.3s ease 0s;
+
+      &._active {
+        transform: translate(0, 467px);
+      }
     }
   }
 
@@ -48,6 +68,16 @@
 }
 
 .phone {
+  @media (max-width:$md3+px) {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 36px 0px;
+
+    &>*:not(:last-child) {
+      margin: 0px 0px 28px 0px;
+    }
+  }
+
 
   // .phone__main
   &__main {
@@ -98,7 +128,7 @@
       top: 0;
       width: 100%;
       max-height: 100%;
-  
+
       padding: 24px 76px 36px;
 
       transform: translate(-100%, 92px);
@@ -143,12 +173,13 @@
   &__item {
     padding: 0px 0px 32px 0px;
 
-    &:not(:last-child) {
-      @include adaptiv-value("margin-right", 32, 10, 1);
-    }
 
     @media (min-width: $md3+px) {
       padding: 5px 0px;
+
+      &:not(:last-child) {
+        @include adaptiv-value("margin-right", 32, 10, 1);
+      }
     }
 
     @media (max-width:$md3+px) {

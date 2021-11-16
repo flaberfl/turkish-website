@@ -86,11 +86,14 @@ let burger= document.querySelector(".burger");
 if (burger != null) {
 	let delay = 500;
 	let menu = document.querySelector(".menu__body");
+	let menuTop = document.querySelector(".header__top");
+	
 	burger.addEventListener("click", function (e) {
 		if (unlock) {
 			body_lock(delay);
 			burger.classList.toggle("_active");
 			menu.classList.toggle("_active");
+			menuTop.classList.toggle("_active");
 		}
 	});
 
@@ -98,6 +101,7 @@ if (burger != null) {
 		if (unlock) {
 			burger.classList.remove("_active");
 			menu.classList.remove("_active");
+			menuTop.classList.remove("_active");
 			body_lock_remove(delay);
 		}
 	});
