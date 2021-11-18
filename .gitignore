@@ -18,3 +18,8 @@ celerybeat-schedule
 venv/
 dist/
 **/dist/
+.vscode
+package-lock.json
+package.json
+gulpfile.js
+
